@@ -1,0 +1,29 @@
+﻿@model List<MVC_Intermediate.Models.Product>
+@{
+    ViewBag.Title = "ProductList";
+}
+
+<h2>ProductList</h2>
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Picture</th>
+            <th>Product name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="~/phone_pictures/@item.Picture"</td>
+                <td>@item.ProductName</td>
+                <td>@item.Price $</td>
+                <td><a href="/Home/Details/@item.ProductID" class="btn btn-primary">Details</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<h2>AddProduct</h2>
+<hr />
+
+@using (Html.BeginForm("AddProduct", "Home", FormMethod.Post))
+{
+    <div class="row my-3">
+        <label for="ProductName" class="col-md-3">Product name</label>
+        <div class="col-md-9">
+            @Html.TextBox("ProductName", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <label for="Explanation" class="col-md-3">Explanation</label>
+        <div class="col-md-9">
+            @Html.TextArea("Explanation", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <label for="Price" class="col-md-3">Price</label>
+        <div class="col-md-9">
+            @Html.TextBox("Price", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <label for="Picture" class="col-md-3">Picture</label>
+        <div class="col-md-9">
+            @Html.TextBox("Picture","1-4.jfif", new { @class = "form-control"})
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <label for="OnSale" class="col-md-3">For sale?</label>
+        <div class="col-md-9">
+            Yes : @Html.RadioButton("OnSale", true)
+            No : @Html.RadioButton("OnSale", false)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Click to save</div>
+        <div class="col-md-9">
+            <button type="submit" class="btn btn-primary my-2">Save</button>
+        </div>
+    </div>
+}   
+

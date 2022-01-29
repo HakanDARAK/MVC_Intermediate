@@ -1,0 +1,14 @@
+﻿@model MVC_Intermediate.Models.Product
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row" style="margin:20px">
+    <div class="col-md-4" style="position:absolute"></div>
+    <img src="~/phone_pictures/@Model.Picture" style="width:200px" alt="PhonePicture" />
+    <div class="col-md-8">
+        <h2>Product Name : @Model.ProductName</h2>
+        <p><strong>Explanation</strong> : @Model.Explanation</p>
+        <p><strong>Price</strong> : @Model.Price $</p>
+    </div>
+</div>
+

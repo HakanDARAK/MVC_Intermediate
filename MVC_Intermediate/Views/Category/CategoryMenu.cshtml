@@ -1,0 +1,8 @@
+﻿@using MVC_Intermediate.Models
+@model  List<Category>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a class="list-group-item">@item.CategoryName</a>
+    }
+</div>

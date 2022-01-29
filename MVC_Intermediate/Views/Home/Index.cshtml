@@ -1,0 +1,44 @@
+﻿@using MVC_Intermediate.Models
+@model ProductCategoryModel
+<div class="container">
+    <div class="alert alert-success" role="alert"><strong>There are @Model.NumberOfProduct products for sale.</strong></div>
+
+    @*@Html.Partial("CategoryMenu", Model.Categories)*@
+    <div class="row">
+        @foreach (var item in Model.Products)
+        {
+
+            <div class="col-sm-3 card" style="margin:.5px">
+                <div class="card-body">
+                    <img src="https://picsum.photos/100/100" alt="Electronics" />
+
+                    <h3>@item.ProductName</h3>
+                    <p>
+                        @if (item.Explanation.Length > 50)
+                        {
+                            @(item.Explanation.Substring(0, 47)+"...")
+                        }
+                        else
+                        {
+                            @item.Explanation
+                        }
+                    </p>
+                    <p>
+                        @*<a href="/Home/Details/@item.ProductID" class="btn btn-primary" role="button">Get Details</a>*@
+                        @*<a href="Home/Details/?id=@item.ProductID" class="btn btn-primary">Get Details</a>*@
+                        @* if we write productid instead of id we have to change details action's parameter as productid because route config can just catch id. *@
+                        @Html.ActionLink("Product Detail", "Details", new { id = item.ProductID }, new { @class = "btn btn-primary" })
+
+                    </p>
+
+                </div>
+            </div>
+
+
+        }
+    </div>
+    @section Category{
+        @Html.Action("CategoryMenu", "Category")
+    }
+</div>
+
